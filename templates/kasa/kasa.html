@@ -1,0 +1,24 @@
+{% extends 'kasa/base.html' %}
+
+{% block content %}
+
+	
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">KASA IMPORT</h2>
+                <p class="text-center">Plik kasa</p>
+            </div>
+            <form  name="form" method="POST" enctype="multipart/form-data" action=".">
+		<div class="form-group">
+		{% csrf_token %}
+		<input id="id_path" class="form-control-file" type="file" name="path"></p>
+		<input id="id_description" class="form-control-file" type="text" name="description"></div></p>
+		<div class="form-group"><button class="btn btn-primary" type="submit">BROWSE</button></div>
+            </form>
+	{% if myplik.path %}
+	<button class="btn" onclick="window.location.href='http://jan-svr-intra01:8000/kasa/download'"><i class="fa fa-download"></i> Download</button> 
+	{% endif %}
+        </div>
+
+
+{% endblock %}
